@@ -7,8 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="titelBox">
+    <h1>
+      <%= link_to 'Anagram finder', root_path  %>
+       </h1>
+  </div>
+  <!-- flash -->
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+  <% end %>
 
 <%= yield %>
 
+<p>
+  Upload your file and search for anagrams. Only .txt files are allowed. Each word should be on a new line.
+</p>
 </body>
 </html>

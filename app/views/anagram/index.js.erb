@@ -1,0 +1,9 @@
+$('#searchBox').replaceWith("<%= escape_javascript render partial:  'anagram/search_form'   %>");
+
+var currentResult = $('#currentResult'),
+    resultBox     = currentResult.children('.resultBox');
+
+if(resultBox.children().length)
+  $('#historyResult').prepend(resultBox.clone());
+
+currentResult.replaceWith("<%= escape_javascript render partial:  'anagram/result_box'   %>");

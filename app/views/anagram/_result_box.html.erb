@@ -1,0 +1,19 @@
+<div id="currentResult" class="">
+  <div class="resultBox">
+    <% unless searched_for_anagram? @search_value  %>
+
+      <span class="resultTime">
+        <%= display_result_date_time %>
+      </span>
+      <br />
+      <span class="resultMsg">
+        <%= display_result_msg(@search_value, @result) + " in #{ @loading_time }ms" %>
+      </span>
+      <br />
+      <span class="foundAnagrams">
+        <%= display_found_anagrams @result %>
+      </span>
+
+    <% end %>
+  </div>
+</div>

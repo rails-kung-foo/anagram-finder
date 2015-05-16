@@ -1,0 +1,8 @@
+<%= form_tag file_upload_create_path, multipart: true do %>
+  <%# = label_tag :file, 'File to Upload' %>
+  <%= file_field_tag :file %>
+  <%= submit_tag 'Upload File' %>
+<% end %>
+<p class="fileUploadMsg">
+  <%= @file_handling_msg %>
+</p>

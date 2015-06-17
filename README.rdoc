@@ -1,5 +1,5 @@
 == README
-My second Rails app is an anagram solver. The main purpopose is to understand & learn rspec.
+My second Rails app is an anagram solver. The main purpopose of this app for me is to understand & learn rspec.
 
 Duration of upload and search will be displayed in ms. 
 App provides history for early searches. (JQuery)

@@ -2,7 +2,7 @@
 My second Rails app is an anagram solver. The main purpopose is to understand & learn rspec.
 
 Duration of upload and search will be displayed in ms. 
-App provides History for early search. (JQuery)
+App provides history for early searches. (JQuery)
 
 == Installation: 
 Clone this repo and run bundel install.
@@ -11,7 +11,7 @@ Clone this repo and run bundel install.
 Upload a .txt file. Each word should be on a new line. Search for anagrams. 
 
 
-ToDO:
+ToDo:
 - Currently the validation of the file handling is in controller. Moving to new class.
 
 

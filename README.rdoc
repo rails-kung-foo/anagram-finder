@@ -4,10 +4,10 @@ My second Rails app is an anagram solver. The main purpopose is to understand & 
 Duration of upload and search will be displayed in ms. 
 App provides History for early search. (JQuery)
 
-Installation: 
+== Installation: 
 Clone this repo and run bundel install.
 
-How to use:
+== How to use:
 Upload a .txt file. Each word should be on a new line. Search for anagrams. 
 
 

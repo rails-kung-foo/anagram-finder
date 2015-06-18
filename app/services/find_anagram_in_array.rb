@@ -1,9 +1,9 @@
 class FindAnagramInArray
-  def self.call search_value
+  def self.call search_value, file = 'dictionary.txt'
     search_key = search_value.squish().downcase()
     result = []
     search_key_length = search_key.length
-    contents_array = File.read('dictionary.txt').split(' ')
+    contents_array = File.read(file).split(' ')
 
     contents_array.each do |e|
       next if search_key_length != e.length
@@ -12,6 +12,6 @@ class FindAnagramInArray
       result << e
     end
 
-    result 
+    result
   end
 end

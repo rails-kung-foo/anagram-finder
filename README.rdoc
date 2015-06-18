@@ -15,7 +15,10 @@ Upload a .txt file. Each word should be on a new line. Search for anagrams.
 
 
 ToDo:
-- Currently the validation of the file handling is in controller. Moving to new class.
+- Rspec test for tapeless model validation.
+
+Done:
+-Currently the validation of the file handling is in controller. Moving to new class.-
 
 
 <tt>rake doc:app</tt>.

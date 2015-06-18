@@ -2,7 +2,6 @@ class FileUploadController < ApplicationController
   before_action :set_start_time
 
   def new
-
   end
 
   def create

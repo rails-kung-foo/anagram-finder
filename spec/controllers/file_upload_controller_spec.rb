@@ -1,16 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe FileUploadController, :type => :controller do
-  before :each do
-    @file = fixture_file_upload('origin_dictionary.txt')
-  end
 
   describe "#create" do
-    it "redirects to root path" do
-      get :create
-      expect(response).to redirect_to root_path
-    end
-
     context 'with an empty field' do
       it 'redirects to root path' do
         post :create, file: ''
@@ -19,12 +11,7 @@ RSpec.describe FileUploadController, :type => :controller do
 
       it 'flash message says "No file detected!"' do
         post :create, file: ''
-        expect(flash[:danger]).to eq 'No file detected!'
-      end
-
-      it 'validation is invalid.' do
-        post :create, file: ''
-        expect(@file).to be_invalid?
+        expect(flash[:danger]).to eq 'can\'t be blank'
       end
     end
 
@@ -38,9 +25,25 @@ RSpec.describe FileUploadController, :type => :controller do
         expect(response).to redirect_to root_path
       end
 
-      it 'flash message says "Please upload only .txt files!"' do
+      it 'flash message displays "Only txt files are allowed"' do
         post :create, file: @wrong_file
-        expect(flash[:notice]).to eq 'Please upload only .txt files!'
+        expect(flash[:danger]).to eq 'Only txt files are allowed'
+      end
+    end
+
+    context 'with valid file' do
+      before :each do
+        @file = fixture_file_upload('origin_dictionary.txt', 'text/plain')
+      end
+
+      it 'redirects to root path' do
+        post :create, file: @file
+        expect(response).to redirect_to root_path
+      end
+
+      it 'flash message begins with "File uploaded!"' do
+        post :create, file: @file
+        expect(flash[:notice]).to match /File uploaded!/
       end
     end
   end

@@ -15,7 +15,7 @@ class FileUploadController < ApplicationController
       flash[:notice] = "File uploaded! in #{ @loading_time = set_end_time }ms"
     else
       @file.errors.each do |k, v|
-        flash[:danger] = "#{ flash[:danger] } #{ v }."
+        flash[:danger] = v
       end
     end
 

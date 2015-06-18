@@ -1,14 +1,17 @@
 == README
-My second Rails app is an anagram solver. The main purpopose of this app for me is to understand & learn rspec.
+My second Rails app is a single page anagram-solver. For me, the main purposes of this app is to understand and get started to learn rspec.
 
-Duration of upload and search will be displayed in ms. 
-App provides history for early searches. (JQuery)
+Features:
 
-== Installation: 
+- Upload file.
+- Duration of upload and search will be displayed in ms.
+- App provides history for early searches. (JQuery)
+
+== Installation:
 Clone this repo and run bundel install.
 
 == How to use:
-Upload a .txt file. Each word should be on a new line. Search for anagrams. 
+Upload a .txt file. Each word should be on a new line. Search for anagrams.
 
 
 ToDo:

@@ -19,7 +19,12 @@ RSpec.describe FileUploadController, :type => :controller do
 
       it 'flash message says "No file detected!"' do
         post :create, file: ''
-        expect(flash[:notice]).to eq 'No file detected!'
+        expect(flash[:danger]).to eq 'No file detected!'
+      end
+
+      it 'validation is invalid.' do
+        post :create, file: ''
+        expect(@file).to be_invalid?
       end
     end
 

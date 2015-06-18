@@ -1,23 +1,29 @@
 class FileUploadController < ApplicationController
   include LoadingTimer
-  
+
   before_action :set_start_time
 
   def new
   end
 
   def create
-    uploaded_file = params[:file]
+    @file = FileUpload.new file: filter_params
+    @file.content_type = filter_params.content_type if filter_params.respond_to? :content_type
 
-    if uploaded_file.blank?
-      file_handling_msg = 'No file detected!'
-    elsif uploaded_file.content_type == 'text/plain'
-      File.write('dictionary.txt', uploaded_file.read)
-      file_handling_msg = "File uploaded! in #{ @loading_time = set_end_time }ms"
+    if @file.valid?
+      File.write('dictionary.txt', params[:file].read)
+      flash[:notice] = "File uploaded! in #{ @loading_time = set_end_time }ms"
     else
-      file_handling_msg = 'Please upload only .txt files!'
+      @file.errors.each do |k, v|
+        flash[:danger] = "#{ flash[:danger] } #{ v }."
+      end
     end
 
-    redirect_to root_path, notice: "#{ file_handling_msg }"
+    redirect_to root_path
   end
+
+  private
+  def filter_params
+   params.slice(:file)[:file]
+ end
 end

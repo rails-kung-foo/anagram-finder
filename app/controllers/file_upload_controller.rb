@@ -1,4 +1,6 @@
 class FileUploadController < ApplicationController
+  include LoadingTimer
+  
   before_action :set_start_time
 
   def new
@@ -17,14 +19,5 @@ class FileUploadController < ApplicationController
     end
 
     redirect_to root_path, notice: "#{ file_handling_msg }"
-  end
-
-  private
-  def set_start_time
-    @loading_time = DateTime.now.strftime('%Q')
-  end
-
-  def set_end_time
-    DateTime.now.strftime('%Q').to_i - @loading_time.to_i
   end
 end

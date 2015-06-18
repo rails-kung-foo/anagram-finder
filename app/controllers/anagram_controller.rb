@@ -2,17 +2,15 @@ class AnagramController < ApplicationController
   before_action :set_start_time
 
   def index
-  end
-
-  def create
     @search_value = params[:search]
+    
     unless @search_value.blank?
       @result = FindAnagramInArray.call @search_value
       @loading_time = set_end_time
     end
 
     respond_to do |format|
-      format.html { redirect_to root_path }
+      format.html
       format.js
     end
   end

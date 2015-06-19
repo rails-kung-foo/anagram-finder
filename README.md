@@ -11,7 +11,7 @@ My second Rails app is a single page app to find anagrams. For me, the main purp
 - Run `rspec spec/` for tests.
 
 ## How to use:
-Upload a .txt file, each word should be on a new line.
+Upload a .txt (origin_dictionary.txt is provided) file, each word should be on a new line.
 Search for anagrams.
 
 

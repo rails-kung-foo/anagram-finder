@@ -16,7 +16,7 @@ Search for anagrams.
 
 
 ToDo:
-- Rspec test for tapeless model validation.
+- Rspec test for tableless model validation.
 
 
 <tt>rake doc:app</tt>.

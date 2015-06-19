@@ -17,7 +17,7 @@ RSpec.describe FileUploadController, :type => :controller do
 
     context 'with an wrong file extension' do
       before :each do
-        @wrong_file = fixture_file_upload('wrong_file.rb')
+        @wrong_file = fixture_file_upload('wrong_file.rb', 'text/x-ruby-script')
       end
 
       it 'redirects to root path' do

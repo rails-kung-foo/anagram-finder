@@ -1,22 +1,20 @@
-== README
+# README
 My second Rails app is a single page app to find anagrams. For me, the main purposes of this app is to understand and start to learn rspec.
 
-Features:
-
+## Features:
 - File upload for own list of words.
 - Duration of upload and search will be displayed in ms.
 - App provides history for early searches. (JQuery)
 
-== Installation:
-Clone this repo and run bundle install.
+## Installation:
+- Clone this repo and run `bundle install`.
+- Run `rspec spec/` for tests.
 
-== How to use:
+## How to use:
 Upload a .txt file, each word should be on a new line.
 Search for anagrams.
 
 
-ToDo:
-- Rspec test for tableless model validation.
 
 
 <tt>rake doc:app</tt>.

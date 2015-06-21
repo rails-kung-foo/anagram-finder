@@ -11,7 +11,7 @@ RSpec.describe FileUploadController, :type => :controller do
 
       it 'flash message says "No file detected!"' do
         post :create, file: ''
-        expect(flash[:danger]).to eq 'can\'t be blank'
+        expect(flash[:danger]).to match /can\'t be blank/
       end
     end
 
@@ -27,7 +27,7 @@ RSpec.describe FileUploadController, :type => :controller do
 
       it 'flash message displays "Only txt files are allowed"' do
         post :create, file: @wrong_file
-        expect(flash[:danger]).to eq 'Only txt files are allowed'
+        expect(flash[:danger]).to match /Only txt files are allowed/
       end
     end
 
